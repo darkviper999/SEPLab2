@@ -1,8 +1,14 @@
+import sys
+from PyQt5.QtCore import * 
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+
 class Simple_drawing_window(QWidget):
     def __init__(self):
         QWidget.__init__(self,None)
         self.setWindowTitle("Simple Drawing")
-        self.rabbit = QPixmap("images/rabbit.png")
+        self.rabbit = QPixmap("rabbit.png")
+        self.tu = QPixmap("tu.jpg")
     def paintEvent(self, e):
         p = QPainter()
         p.begin(self)
@@ -20,6 +26,7 @@ class Simple_drawing_window(QWidget):
             QPoint(50,200),QPoint(150,200),QPoint(100,400),
             )
         p.drawPixmap(QRect(200,100,320,320),self.rabbit)
+        p.drawPixmap(QRect(400,100,320,320),self.tu)
         p.end()
 
 def main():
@@ -31,7 +38,5 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-=======
-import sys
-from PyQt5.QtCore import * 
->>>>>>> master
+
+
